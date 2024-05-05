@@ -1,3 +1,17 @@
+// express connection
+var express = require('express');
+const connection = require('./connection');
+var app = express();
+
+app.get('/', function (req, res) {
+  res.send('hello world!!');
+});
+
+app.listen(4000, function () {
+  console.log('server is running');
+  connection();
+});
+
 // data from script2.js
 var data = require('./script2');
 
@@ -13,18 +27,4 @@ figlet('AI Thinkers', function (err, figletString) {
   }
 
   console.log(figletString);
-});
-
-// express connection
-var express = require('express');
-const connection = require('./connection');
-var app = express();
-
-app.get('/', function (req, res) {
-  res.send('hello');
-});
-
-app.listen(4000, function () {
-  console.log('server is running');
-  connection();
 });
