@@ -17,6 +17,7 @@ figlet('AI Thinkers', function (err, figletString) {
 
 // express connection
 var express = require('express');
+const connection = require('./connection');
 var app = express();
 
 app.get('/', function (req, res) {
@@ -25,4 +26,5 @@ app.get('/', function (req, res) {
 
 app.listen(4000, function () {
   console.log('server is running');
+  connection();
 });
